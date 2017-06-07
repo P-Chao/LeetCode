@@ -1,9 +1,3 @@
-/*
-LeetCode 274
-Peng Chao, 3,Apr
-Line: 70
-*/
-
 #include <iostream>
 #include <cstdio>
 #include <vector>
