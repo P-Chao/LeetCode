@@ -11,7 +11,12 @@ public:
 		for (auto prereq : prerequisites){
 			lmp[prereq.first].push_back(prereq.second);
 		}
-
+		int i = 0;
+		while (true)
+		{
+			i++;
+		}
+		return{};
 	}
 };
 
