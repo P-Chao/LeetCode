@@ -1,22 +1,41 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
+#include <queue>
 
 using namespace std;
 
 class Solution {
 public:
+	// 不断删除度为0的点，BFS方式
 	vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
-		vector<vector<int>> lmp(numCourses, vector<int>());
-		vector<pair<int, int>> stampe(numCourses, {0, 0});
-		for (auto prereq : prerequisites){
-			lmp[prereq.first].push_back(prereq.second);
+		vector<int> order;
+		vector<int> outd(numCourses, 0);
+		unordered_map<int, vector<int>> graph;
+		for (auto& ele : prerequisites){
+			graph[ele.second].push_back(ele.first);
+			outd[ele.first]++;
 		}
-		int i = 0;
-		while (true)
-		{
-			i++;
+
+		queue<int> q;
+		for (int i = 0; i < numCourses; ++i){
+			if (outd[i] == 0){
+				q.push(i);
+			}
 		}
-		return{};
+
+		while (!q.empty()) {
+			int t = q.front();
+			q.pop();
+			order.push_back(t);
+			for (int i = 0; i < graph[t].size(); ++i){
+				outd[graph[t][i]]--;
+				if (outd[graph[t][i]] == 0){
+					q.push(graph[t][i]);
+				}
+			}
+		}
+		return (order.size() == numCourses) ? order : vector<int>();
 	}
 };
 
