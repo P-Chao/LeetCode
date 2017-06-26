@@ -34,14 +34,14 @@ private:
 			while (k <= end && sums[k] - sums[i] < lower) {
 				++k;
 			}
-			count += j - k;
+			count += j - k;  // 这样双指针的条件是sum已排过序，所以后面执行sum的归并排序
 			while (t <= end && sums[t] <= sums[i]) { // t从mid+1开始, i从start开始，如果sum[t] < sum[i]，则说明
-				tmp[r++] = sums[t++];
+				tmp[r++] = sums[t++]; // 此时sum[t] < sum[i], tmp[r]中存储左右两端中更小的，以实现排序
 			}
-			tmp[r] = sums[i]; // tmp存储后半段sum
+			tmp[r] = sums[i]; // 此时sum[i] < sum[t]
 		}
 
-		for (int i = 0; i < r; ++i){  // tmp : sum[mid+1] sum[mid+2] sum[mid+3] ... sum[mid]
+		for (int i = 0; i < r; ++i){  // 将重排后的数组赋值给sum
 			sums[start + i] = tmp[i];
 		}
 		return count;
