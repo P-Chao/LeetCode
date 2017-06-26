@@ -5,6 +5,9 @@ using namespace std;
 
 class Solution {
 public:
+	/* N*log(N);merge-sorting
+	sum顺序改变对结果无影响，因为总是从sum中抽出两个元素相减，包含所有组合情况，只有两个先后顺序需要考虑，所以可以一左一右，左右分别排序好
+	*/
 	int countRangeSum(vector<int>& nums, int lower, int upper) {
 		const int n = nums.size();
 		if (n <= 0){
