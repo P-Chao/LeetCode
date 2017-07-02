@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F8E6A542-D85B-422B-83D0-9DAF52F9D972}</ProjectGuid>
+    <ProjectGuid>{4A8BC646-A874-437B-A0D2-8BE2F80B1B8F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My036_ValidSudoku</RootNamespace>
+    <RootNamespace>My305_NumberIslandsII</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,7 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="036_ValidSudoku.cpp" />
+    <ClCompile Include="305_NumberIslandsII.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

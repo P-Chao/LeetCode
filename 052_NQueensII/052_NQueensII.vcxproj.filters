@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="036_ValidSudoku.cpp">
+    <ClCompile Include="052_NQueensII.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
