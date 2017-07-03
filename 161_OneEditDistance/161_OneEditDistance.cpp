@@ -13,41 +13,33 @@ public:
 			return false;
 		}
 		if (m == 0 || n == 0){
-			return true;
+			return m || n;
 		}
 		int distance = 0;
-		if (abs(m - n) == 1){
-			int i = 0, j = 0, ii = n-1, jj = m-1;
-			while (s[i] == t[j]) {
-				++i;
-				++j;
-			}
-			while (s[ii] == t[jj] && ii > i && jj > j){
-				--ii;
-				--jj;
-			}
-
-
-
-
-
-		}
-		if (m == n){
-			for (int i = 0; i < 1; ++i){
-				if (s[i] != t[i]){
-					++distance;
-					if (distance > 1){
-						return false;
-					}
+		int i = 0, j = 0;
+		while (i < m && j < n){
+			if (s[i++] != t[j++]){
+				if (++distance > 1){
+					return false;
+				}
+				if (m > n){
+					j--;
+				}
+				if (m < n){
+					i--;
 				}
 			}
-
 		}
-		return distance == 1;
+		if (i == m && j == n){
+			return distance == 1;
+		}
+		return distance == 0;
 	}
 };
 
 int main(int argc, char *argv[]){
 	Solution s;
-	cout << s.isOneEditDistance("abcd", "bcd") << endl;
+	cout << s.isOneEditDistance("a", "ac") << endl;
+	system("pause");
+	return 0;
 }
