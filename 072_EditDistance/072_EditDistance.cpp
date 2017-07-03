@@ -25,8 +25,7 @@ public:
 			if (!flag && word1[i] == word2[0]){
 				flag = true;
 				dp[i][0] = dp[i - 1][0];
-			}
-			else{
+			} else{
 				dp[i][0] = dp[i - 1][0] + 1;
 			}
 			
@@ -36,8 +35,7 @@ public:
 			if (!flag && word1[0] == word2[j]){
 				flag = true;
 				dp[0][j] = dp[0][j - 1];
-			}
-			else{
+			} else{
 				dp[0][j] = dp[0][j - 1] + 1;
 			}
 			
